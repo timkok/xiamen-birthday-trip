@@ -545,6 +545,42 @@ h2 {
   line-height: 1.4;
 }
 
+/* 候选积分房卡片样式 */
+.candidate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
+  background: rgba(0,0,0,0.02);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.candidate-opt-item {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 6px;
+}
+
+.candidate-opt-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.candidate-opt-item strong {
+  font-size: 11px;
+  color: var(--dark-bg);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.candidate-opt-item p {
+  font-size: 10px;
+  color: var(--muted-color);
+  line-height: 1.35;
+  margin: 0;
+}
+
 /* --- 3. 详细日程表 & Day Nav --- */
 .day-nav-wrapper {
   position: sticky;
