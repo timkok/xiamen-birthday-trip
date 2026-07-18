@@ -353,45 +353,1969 @@ const itineraryData = {
 
 // --- 美食菜单数据 (包含 tags 与 rec 默认推荐) ---
 const menuData = {
-  anxi: [
-    { name: "茶香温泉土鸡蛋", price: 38, desc: "悦泉温泉水慢煮，口感极其软嫩，孩子老人极佳。", checked: true, rec: true, tags: ["老人友好", "孩子友好"] },
-    { name: "古法手剥傍林笋", price: 38, desc: "当地特色脆爽笋，膳食纤维丰富，清爽解腻。", checked: true, rec: true, tags: ["当地特色", "少辣"] },
-    { name: "铁观音茶香虾", price: 128, desc: "将安溪铁观音茶香焗入鲜虾，虾壳酥脆，必点特色菜。", checked: true, rec: true, tags: ["当地特色", "老人友好"] },
-    { name: "山茶油小黄姜煎土鸡", price: 158, desc: "土黄姜片煎本鸡，茶油温补不上火，驱风散寒。", checked: true, rec: true, tags: ["老人友好", "当地特色"] },
-    { name: "本地光鱼两吃 (酱油水/清汤)", price: 228, desc: "溪水光鱼，肉质极细。注意：刺稍多，老人小孩需慢咽。", checked: true, rec: true, tags: ["当地特色", "有鱼刺"] },
-    { name: "土猪肉焖安溪麻笋煲", price: 88, desc: "浓汤小火焖制，笋吸满肉汁，十分下饭。", checked: false, rec: false, tags: ["当地特色"] },
-    { name: "原香小笋芥菜煲", price: 88, desc: "清热去火的热汤菜，滑嫩养胃。", checked: true, rec: true, tags: ["老人友好"] },
-    { name: "幸福炒饭", price: 58, desc: "配有蛋碎、胡萝卜和葱花，米粒分明，分量足。", checked: true, rec: true, tags: ["孩子友好"] },
-    { name: "湖头咸笋包 (6个)", price: 48, desc: "安溪申遗特色点心，外糯里咸，一人尝鲜一个。", checked: true, rec: true, tags: ["当地特色", "孩子友好"] }
+  "anxi": [
+    {
+      "name": "新西兰羊排 (例)",
+      "price": 188,
+      "desc": "幸福味道特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "铁板牛仔骨 (例)",
+      "price": 128,
+      "desc": "雪花牛仔骨、黑椒汁",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "金蒜爆雪花牛肉 (例)",
+      "price": 168,
+      "desc": "牛肉、金蒜",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "壹玖回味鸭皇煲 (例)",
+      "price": 158,
+      "desc": "幸福味道特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "水煮雪花牛肉 (例)",
+      "price": 158,
+      "desc": "雪花牛肉、泡菜、云耳 / 🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "波特酒爆法国鹅肝 (例)",
+      "price": 138,
+      "desc": "鹅肝、蒜段、白兰地",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "鲜果酱佐法式鹅肝 (位)",
+      "price": 128,
+      "desc": "鲜果酱、鹅肝",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "黑椒汁雪花牛仔骨 (位)",
+      "price": 78,
+      "desc": "雪花牛仔骨、黑椒汁",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "花胶浓汤九年百合 (例)",
+      "price": 98,
+      "desc": "花胶、干贝、百合",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "沙茶一品锅 (例)",
+      "price": 98,
+      "desc": "虾滑、豆腐、嫩鸭血、鱿鱼",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "广式辣味芋头煲 (例)",
+      "price": 98,
+      "desc": "广西贡芋、腊肠、腊肉",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "原香小笋芥菜煲 (例)",
+      "price": 88,
+      "desc": "幸福味道特色菜品，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "石锅自制豆腐烩双宝 (例)",
+      "price": 88,
+      "desc": "自制玉米豆腐、蹄筋、海参",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "韭香芋丝樱花虾 (例)",
+      "price": 78,
+      "desc": "樱花虾、韭菜花",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "铁板扒黄花鱼 (半条)",
+      "price": 68,
+      "desc": "幸福味道特色菜品，分量：1半条。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "野山椒酸菜黄骨鱼 (条)",
+      "price": 28,
+      "desc": "黄骨鱼、酸菜 / 🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "金汤野米煮辽参 (位)",
+      "price": 88,
+      "desc": "辽参、野米、金汤",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "金汤五谷烩花胶 (位)",
+      "price": 68,
+      "desc": "花胶筒、野米、红腰豆",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "海胆酱海虾球 (例)",
+      "price": 128,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "墨鱼紫菜拼虾仁排 (例)",
+      "price": 108,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "脆皮豆腐 (例)",
+      "price": 38,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "味蕾肚中菌 (例)",
+      "price": 98,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "本帮茶香五花肉 (例)",
+      "price": 68,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "石锅焗墨鱼仔 (例)",
+      "price": 128,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "鲜黄椒酸汤鱼 (例)",
+      "price": 268,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "绣球菌干贝腱子汤 (位)",
+      "price": 38,
+      "desc": "新菜推荐特色菜品，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "烤鳗菠菜饭 (例)",
+      "price": 108,
+      "desc": "新菜推荐特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "脆皮妙龄乳鸽 (只)",
+      "price": 58,
+      "desc": "精致头盘特色菜品，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "幸福特色冻猪手 (例)",
+      "price": 58,
+      "desc": "精致头盘特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "麻辣开胃黑凤爪 (例)",
+      "price": 58,
+      "desc": "黑凤爪 / 🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "茶香温泉土鸡蛋 (例)",
+      "price": 38,
+      "desc": "精致头盘特色菜品，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "精美小鱼干 (例)",
+      "price": 38,
+      "desc": "鸡腿小鱼干",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "脆爽海蜇头 (例)",
+      "price": 38,
+      "desc": "精致头盘特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "古法手剥傍林笋 (例)",
+      "price": 38,
+      "desc": "小竹笋、泡椒",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "本地萝卜酸 (例)",
+      "price": 28,
+      "desc": "精致头盘特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "桂花糯米藕 (例)",
+      "price": 28,
+      "desc": "糯米藕、桂花",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "安溪小吃拼 (例)",
+      "price": 58,
+      "desc": "埔头鸡卷、五香条、豆腐",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "碧绿官桥炒豆干 (例)",
+      "price": 38,
+      "desc": "官桥豆干、韭菜",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "铁观音茶香虾 (例)",
+      "price": 128,
+      "desc": "明虾、铁观音",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "山茶油砂锅焗鳗鱼 (例)",
+      "price": 198,
+      "desc": "山茶油、鳗鱼",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "山茶油焖德化乌鸡 (例)",
+      "price": 188,
+      "desc": "德化乌鸡、山茶油",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "山茶油猪肚煲豆干 (例)",
+      "price": 98,
+      "desc": "猪肚、竹笋、豆干",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "幸福茶香排骨 (例)",
+      "price": 88,
+      "desc": "猪寸排、茶叶",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "山茶油东坑淮山煲 (例)",
+      "price": 88,
+      "desc": "山茶油、淮山",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "土猪肉焖安溪麻笋煲 (例)",
+      "price": 88,
+      "desc": "土猪肉、麻笋",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "三味盐露豆干 (例)",
+      "price": 58,
+      "desc": "茶乡特色特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "铁观音荔浦芋头 (例)",
+      "price": 68,
+      "desc": "茶乡特色特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "香酥小溪鱼 (例)",
+      "price": 68,
+      "desc": "茶乡特色特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "湖头咸笋包 (个)",
+      "price": 8,
+      "desc": "麻笋、瘦肉、艾草",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "土罐焖雁鹅三吃 (例)",
+      "price": 1088,
+      "desc": "需提前预定（鹅、米血、冬瓜）",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "本地光鱼两吃 (条)",
+      "price": 228,
+      "desc": "水库光鱼、嫩豆腐",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "有鱼刺"
+      ]
+    },
+    {
+      "name": "山茶油小黄姜煎土鸡 (只)",
+      "price": 158,
+      "desc": "三黄鸡、小黄姜",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "干贝滋补鸭 (例)",
+      "price": 188,
+      "desc": "干贝、药膳、小菜鸭",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "红菇炖土鸡汤 (例)",
+      "price": 188,
+      "desc": "本地土鸡、红菇",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "四物炖红脸番鸭汤 (例)",
+      "price": 188,
+      "desc": "印月泉水特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "老火慢炖菌菇汤 (例)",
+      "price": 108,
+      "desc": "印月泉水特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "七彩鲨鱼羹 (例)",
+      "price": 98,
+      "desc": "巴沙鱼柳、五丝",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "原只椰皇炖辽参 (位)",
+      "price": 108,
+      "desc": "印月泉水特色菜品，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "黑蒜名仕养生汤 (位)",
+      "price": 38,
+      "desc": "新鲜寸排、玛卡、黑蒜",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "松茸炖土猪肉汤 (位)",
+      "price": 38,
+      "desc": "印月泉水特色菜品，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "红菇鸡汤煮湖头米粉 (例)",
+      "price": 268,
+      "desc": "五谷丰登特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "古法焖湖头米粉 (例)",
+      "price": 58,
+      "desc": "五谷丰登特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "炒地瓜粉粿 (例)",
+      "price": 58,
+      "desc": "五谷丰登特色菜品，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "古法煮山珍豆签 (例)",
+      "price": 48,
+      "desc": "山珍豆签、鱿鱼、虾仁",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "幸福炒饭 (例)",
+      "price": 58,
+      "desc": "虾仁、叉烧粒、菜心粒",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "石锅紫菜焖饭 (例)",
+      "price": 48,
+      "desc": "紫菜、虾干、香菇",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    }
   ],
-  waldorf: [
-    { name: "荠菜煎炒客家牛三宝", price: 298, desc: "牛肚牛筋软烂入味，荠菜提鲜去油，爽脆适中。", checked: true, rec: true, tags: ["少辣", "FHR额度限制"] },
-    { name: "客家盐酒河田鸡", price: 188, desc: "精选长汀河田鸡，淡淡黄酒香，皮黄肉嫩，老人极爱。", checked: true, rec: true, tags: ["老人友好", "当地特色"] },
-    { name: "白切深海手钓大红管", price: 298, desc: "白灼深海大红管，滑爽弹牙，不加辛辣佐料。", checked: true, rec: true, tags: ["当地特色", "孩子友好", "FHR额度限制"] },
-    { name: "鲜承姜母鸭", price: 158, desc: "传统沙鸭，生姜片慢煨香气四溢，火候极足易咬。", checked: true, rec: true, tags: ["当地特色", "老人友好"] },
-    { name: "鲜承海鲜泡饭", price: 138, desc: "浓稠海鲜高汤泡饭，口感香滑软糯，小孩最爱。", checked: true, rec: true, tags: ["孩子友好", "老人友好"] },
-    { name: "泉州卤面", price: 98, desc: "配料丰富，汤头浓厚黏稠，面条吸汁软烂易消化。", checked: true, rec: true, tags: ["老人友好", "孩子友好"] },
-    { name: "时令田园绿蔬菜", price: 58, desc: "当季清汤鲜蔬，富含维生素，均衡膳食。", checked: true, rec: true, tags: ["老人友好", "孩子友好"] },
-    { name: "冻花生奶 (4杯)", price: 152, desc: "华府甜品师特制冰爽花生乳，解暑佳品。", checked: false, rec: false, tags: ["孩子友好"] }
+  "waldorf": [
+    {
+      "name": "佛跳墙 (位)",
+      "price": 438,
+      "desc": "米其林招牌特色",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "姜母麻油焗闽东黄鱼 (条)",
+      "price": 568,
+      "desc": "米其林招牌特色",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "FHR额度限制",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "琥珀糖醋酥炸花胶公 (例)",
+      "price": 1688,
+      "desc": "招牌特色（另有 328/位）",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "葱油卤水漳浦填鸭肝 (例)",
+      "price": 198,
+      "desc": "主厨特别推荐精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "金线莲炖德化石洞汤 (例)",
+      "price": 568,
+      "desc": "另有 198/位",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "桂圆老酒烧红鲟 (只)",
+      "price": 298,
+      "desc": "主厨特别推荐精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "水煮东山手钓大管 (例)",
+      "price": 298,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "永安黄椒干煸去骨甲鱼 (例)",
+      "price": 398,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "荞葱煎炒客家牛三宝 (例)",
+      "price": 298,
+      "desc": "🌶️ 辣",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "客家干蒸黑猪四点筋 (例)",
+      "price": 298,
+      "desc": "主厨特别推荐精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "厦门沙茶一锅鲜 (例)",
+      "price": 298,
+      "desc": "主厨特别推荐精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "泸溪酸菜鲍鱼猪脚饭 (例)",
+      "price": 268,
+      "desc": "另有 98/位",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "蜜薯焦糖冰淇淋 (位)",
+      "price": 38,
+      "desc": "主厨特别推荐精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "安海土笋冻 (位)",
+      "price": 48,
+      "desc": "精致头盘精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "白切东山深海手钓大红管 (例)",
+      "price": 298,
+      "desc": "附芥末籽酱、蒜醋汁",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "福建老酒熟醉波士顿龙虾 (半只)",
+      "price": 298,
+      "desc": "精致头盘精致粤闽风味，分量：1半只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "冷渍5头东山鲍鱼 (只)",
+      "price": 58,
+      "desc": "精致头盘精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "海蜇脆口萝卜皮 (例)",
+      "price": 98,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "鹭岛熟醉虾姑 (例)",
+      "price": 168,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "芫荽沙耳拌香螺 (例)",
+      "price": 198,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "茉莉花蜜桃冬瓜 (例)",
+      "price": 58,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "咸水牛肉 (例)",
+      "price": 98,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "永安黄椒熏猪肚 (例)",
+      "price": 118,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "风干腊乳鸽 (只)",
+      "price": 98,
+      "desc": "精致头盘精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "开胃茴香球 (例)",
+      "price": 58,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "醋汁酥芋 (例)",
+      "price": 58,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "虾皮酱炝百合 (例)",
+      "price": 98,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "风干东山巴浪鱼 (例)",
+      "price": 168,
+      "desc": "精致头盘精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "南胜咸水老鹅头 (半个)",
+      "price": 1088,
+      "desc": "提前24小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "荔枝木蜜制叉烧 (例)",
+      "price": 168,
+      "desc": "烧腊精致粤闽风味，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "脆皮烧腩仔 (例)",
+      "price": 168,
+      "desc": "烧腊精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "生炸脆皮乳鸽 (只)",
+      "price": 98,
+      "desc": "烧腊精致粤闽风味，分量：1只。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "本港鱿鱼母老鸽炖土龙 (例)",
+      "price": 1288,
+      "desc": "提前6小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "熟地炖连城白鸭 (例)",
+      "price": 268,
+      "desc": "汤类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "文蛤香螺汤 (例)",
+      "price": 298,
+      "desc": "汤类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "头水紫菜关东辽参 (位)",
+      "price": 188,
+      "desc": "汤类精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "红菇鱼饺炖鲜竹荪 (位)",
+      "price": 108,
+      "desc": "汤类精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "原椰清炖花胶汤 (位)",
+      "price": 188,
+      "desc": "汤类精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "泉州牛肉羹 (例)",
+      "price": 168,
+      "desc": "汤类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "崇武蛭干蟹肉蛋白坑 (例)",
+      "price": 158,
+      "desc": "汤类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "诗山小镇焖猪婆参 (例)",
+      "price": 498,
+      "desc": "鲍参肚&燕窝精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "沙茶干烧12头干鲍 (位)",
+      "price": 468,
+      "desc": "鲍参肚&燕窝精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "原椰椰汁炖燕窝 (位)",
+      "price": 328,
+      "desc": "鲍参肚&燕窝精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "黑松露年糕烧花胶公 (例)",
+      "price": 1688,
+      "desc": "鲍参肚&燕窝精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "永春老醋溪鳗烧花胶公 (例)",
+      "price": 1888,
+      "desc": "鲍参肚&燕窝精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "风味萝卜酱焗炒波士顿龙虾 (只)",
+      "price": 568,
+      "desc": "海鲜精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "黑椒海蛎小青龙 (只)",
+      "price": 398,
+      "desc": "海鲜精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "沙茶琉璃虾 (例)",
+      "price": 268,
+      "desc": "海鲜精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "滋滋老姜生焗黑油鳗 (例)",
+      "price": 198,
+      "desc": "海鲜精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "青青嫩韭炒小象拔蚌 (例)",
+      "price": 228,
+      "desc": "海鲜精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "酱油水东山圈养巴浪鱼 (例)",
+      "price": 218,
+      "desc": "海鲜精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "水煮东山手钓大管 (例)",
+      "price": 298,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "风味海蛎煎 (例)",
+      "price": 98,
+      "desc": "海鲜精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "花菇年糕烧膏蟹 (只)",
+      "price": 298,
+      "desc": "海鲜精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "生炝正红东星斑 (条)",
+      "price": 908,
+      "desc": "海鲜精致粤闽风味，分量：1条。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "藤椒橄榄油浸老虎斑 (条)",
+      "price": 388,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "红鲟糯米饭 (350克) (只)",
+      "price": 298,
+      "desc": "海鲜精致粤闽风味，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "闽东黄鱼 (条)",
+      "price": 568,
+      "desc": "生猛海鲜精致粤闽风味，分量：1条。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "FHR额度限制",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "老虎斑 (条)",
+      "price": 388,
+      "desc": "生猛海鲜精致粤闽风味，分量：1条。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "东星斑 (50g)",
+      "price": 50,
+      "desc": "做法可选：藤椒橄榄油浸/青青椒麻蒸/生炝",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "象拔蚌 (50g)",
+      "price": 120,
+      "desc": "生猛海鲜精致粤闽风味，分量：150g。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "大响螺 (50g)",
+      "price": 150,
+      "desc": "做法可选：鸡油淋/椒麻炒/黄椒蒸",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "富贵虾 (50g)",
+      "price": 120,
+      "desc": "做法可选：清蒸/糯米蒸/风味萝卜酱炒/砂锅焗",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "帝王蟹 (50g)",
+      "price": 60,
+      "desc": "提前12小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "松叶蟹 (50g)",
+      "price": 50,
+      "desc": "提前12小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "小青龙 (条)",
+      "price": 388,
+      "desc": "生猛海鲜精致粤闽风味，分量：1条。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "红龙虾 (50g)",
+      "price": 100,
+      "desc": "生猛海鲜精致粤闽风味，分量：150g。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "狮城牛排焖牛筋 (例)",
+      "price": 368,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "永安黄椒蒸羔羊排 (例)",
+      "price": 268,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "发酵鱼露炝塘排 (例)",
+      "price": 298,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "三椒炒肥肠 (例)",
+      "price": 128,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "榕城荔枝肉 (例)",
+      "price": 128,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "同安封肉配红糖馒头 (例)",
+      "price": 108,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "酥炸醋肉 (例)",
+      "price": 78,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "酥炸五香卷配泉州甜辣酱 (例)",
+      "price": 78,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "砂锅松露花胶福建乌鸡 (例)",
+      "price": 268,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "客家盐酒煮河田鸡 (例)",
+      "price": 188,
+      "desc": "含有当参",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "鲜承姜母鸭 (例)",
+      "price": 158,
+      "desc": "肉禽类精致粤闽风味，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "头水紫菜炒山苏 (例)",
+      "price": 88,
+      "desc": "蔬食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "拍蒜炒小板青 (例)",
+      "price": 88,
+      "desc": "蔬食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "家乡闽北笋干 (例)",
+      "price": 98,
+      "desc": "蔬食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "酱皇翡翠丝瓜 (例)",
+      "price": 88,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "海味石锅芥兰 (例)",
+      "price": 88,
+      "desc": "蔬食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "芋艿煲手撕豆腐 (例)",
+      "price": 118,
+      "desc": "蔬食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "时令田园蔬菜 (例)",
+      "price": 58,
+      "desc": "做法：豉油皇/清炒/蒜茸/上汤",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "鲜承海鲜泡饭 (例)",
+      "price": 138,
+      "desc": "主食精致粤闽风味，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "红菇芋圆炒米粉 (例)",
+      "price": 158,
+      "desc": "主食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "泉州卤面 (例)",
+      "price": 98,
+      "desc": "另有 58/位",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "黄鱼煮面线 (位)",
+      "price": 78,
+      "desc": "主食精致粤闽风味，分量：1位。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "厦门沙茶面 (位)",
+      "price": 68,
+      "desc": "主食精致粤闽风味，分量：1位。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "同安封肉蒸牛角包 (例)",
+      "price": 98,
+      "desc": "主食精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "鹭岛香芋花生汤 (位)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1位。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "冷萃茶石花冻 (位)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "鲜莲子奶冻 (位)",
+      "price": 48,
+      "desc": "甜品精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "闽北燕窝板栗饼 (例)",
+      "price": 58,
+      "desc": "甜品精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "鼓浪屿馅饼 (例)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "凤梨酥 (例)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "鲜承绿豆糕 (例)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "厦门麻糍 (位)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "文火腰果露汤圆 (位)",
+      "price": 38,
+      "desc": "甜品精致粤闽风味，分量：1位。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    }
   ],
-  lohkah: [
-    { name: "贵妃蚌土笋冻 (1位)", price: 87, desc: "厦门非遗小吃，口感像清凉海鲜果冻，老人浅尝。", checked: true, rec: true, tags: ["当地特色"] },
-    { name: "红葱酥南日鲜鲍 (4只)", price: 228, desc: "鲍鱼片开，葱油慢焗，肉质非常脆嫩易咬。", checked: true, rec: true, tags: ["老人友好"] },
-    { name: "白切海钓东山大管", price: 247, desc: "东山海域大鱿鱼，口感鲜脆香甜，蘸点轻酱油。", checked: true, rec: true, tags: ["当地特色", "孩子友好"] },
-    { name: "沙虫双脆鳝鱼羹", price: 87, desc: "滋补热羹，沙虫极其鲜美，适合调理脾胃。", checked: true, rec: true, tags: ["老人友好", "当地特色"] },
-    { name: "黄椒青蟹仔蒸年糕", price: 427, desc: "招牌主蟹，黄椒微辣吊鲜。注意：青蟹有小壳碎屑。", checked: true, rec: true, tags: ["有鱼刺", "FHR额度限制"] },
-    { name: "陈年萝卜焗竹午鱼", price: 257, desc: "竹午鱼油脂丰厚，萝卜干提鲜，几乎无小刺，极推荐。", checked: true, rec: true, tags: ["老人友好", "当地特色"] },
-    { name: "嫩姜芽炒蛏子皇", price: 257, desc: "去壳蛏子皇，鲜嫩爆汁，微辛姜片驱寒去腥。", checked: true, rec: true, tags: ["当地特色", "少辣"] },
-    { name: "韭香浸长汀河田鸡", price: 127, desc: "高汤浸鸡，鸡皮滑爽鸡肉极嫩，富含蛋白质。", checked: true, rec: true, tags: ["老人友好", "孩子友好"] },
-    { name: "黑金果木片皮鸭 (1只)", price: 397, desc: "庆生大主菜。鸭皮酥脆，分饼卷肉，拍照极其气派。", checked: true, rec: true, tags: ["孩子友好", "FHR额度限制"] },
-    { name: "芋泥香酥鸭", price: 77, desc: "鸭肉剁泥拌入荔浦芋头炸至金黄，外酥内糯，香甜适口。", checked: true, rec: true, tags: ["孩子友好"] },
-    { name: "自制腊肉蒸时令鲜笋", price: 127, desc: "竹笋配微咸腊肉，清香可口。", checked: false, rec: false, tags: ["当地特色"] },
-    { name: "红菇柴火豆腐", price: 117, desc: "野生红菇熬汤，豆腐吸汁变红，汤汁极鲜拌饭一流。", checked: true, rec: true, tags: ["老人友好"] },
-    { name: "椒榄菜焗扁豆", price: 57, desc: "清爽解腻蔬菜，不可缺少。", checked: true, rec: true, tags: ["孩子友好"] },
-    { name: "猫爪菇烧芋仔佐火腿", price: 157, desc: "芋头焖得极粉极糯，入口即化，非常适合老人。", checked: true, rec: true, tags: ["老人友好"] },
-    { name: "梅干菜猪油焖饭", price: 197, desc: "大铁锅焖饭，猪油和梅干菜香气扑鼻，可多人分食。", checked: true, rec: true, tags: ["当地特色"] },
-    { name: "冻花生汤 (2份)", price: 94, desc: "厦门百年传统甜汤，花生软烂化沙，香甜解暑。", checked: true, rec: true, tags: ["当地特色", "孩子友好"] },
-    { name: "寿辰长寿面 (包房赠送)", price: 0, desc: "厦餐厅为70大寿包房特别赠送，配以红蛋和长面。", checked: true, rec: true, tags: ["老人友好"] }
+  "lohkah": [
+    {
+      "name": "闽东壹鱼 (黄鱼) (例)",
+      "price": 1277,
+      "desc": "可选：清蒸、家常、沸腾、老菜脯焗",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "鸡油甘树子浸白鱼 (例)",
+      "price": 1277,
+      "desc": "高端定制/招牌高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "一头黑金鲍 (例)",
+      "price": 1377,
+      "desc": "需提前6小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "农家土鸡砂锅焖鲟龙鱼筋 (例)",
+      "price": 1977,
+      "desc": "需提前6小时预订",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "嫩姜芽炒蛏子皇 (例)",
+      "price": 257,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "酱油水小黄鱼 (例)",
+      "price": 177,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "诏安青梅番茄玉带子 (例)",
+      "price": 257,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "九层塔脆瓜炒花螺 (例)",
+      "price": 257,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "陈年老萝卜焗竹午鱼 (例)",
+      "price": 257,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "导美青梅番茄玉带子 (例)",
+      "price": 257,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "奶白菜炒南日鲍 (例)",
+      "price": 237,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "芦溪咸菜浸脆管 (例)",
+      "price": 237,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "永安黄椒烧角蟹佐年糕 (例)",
+      "price": 427,
+      "desc": "🌶️ 辣",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "🌶️ 辣",
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "虾籽茭白炒小斑节虾 (例)",
+      "price": 237,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "同安煎蟹 (例)",
+      "price": 397,
+      "desc": "特色小炒/海鲜高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "三葱烧闽江河鳗 (例)",
+      "price": 237,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "香茅鲜笋炒牛舌 (例)",
+      "price": 297,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "自制腊肉蒸时令鲜笋 (例)",
+      "price": 127,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "凤梨脆皮糖醋肉 (例)",
+      "price": 87,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "茶油猪肚烧丝瓜 (例)",
+      "price": 147,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "酸汤汆雪花牛肉 (位)",
+      "price": 127,
+      "desc": "2位起点 / 🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "椒香脆皮牛腩佐土咖喱 (例)",
+      "price": 397,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "木姜子白切肥肠 (例)",
+      "price": 167,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "猎爪菇炒德化黑鸡 (例)",
+      "price": 187,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "闽南沙茶炖牛尾 (例)",
+      "price": 297,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "老姜砂锅排骨 (例)",
+      "price": 177,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "老姜砂锅焗羊腩 (例)",
+      "price": 327,
+      "desc": "精选肉类/热荤高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "猎爪菇烧芋仔佐火腿 (例)",
+      "price": 157,
+      "desc": "🌶️ 辣",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "丘北椒煎焗脆皮小奶猪 (半只)",
+      "price": 497,
+      "desc": "需提前2小时预订 / 🌶️ 辣 (整只 977)",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣",
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "冰烧三层肉 (例)",
+      "price": 127,
+      "desc": "招牌烧腊/烤肉高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "沙姜啫石岐乳鸽 (只)",
+      "price": 87,
+      "desc": "招牌烧腊/烤肉高端定制海湾晚宴，分量：1只。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "黑金果木片皮鸭 (例)",
+      "price": 397,
+      "desc": "配鱼子酱",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "FHR额度限制"
+      ]
+    },
+    {
+      "name": "饷厦脆皮鸡 (例)",
+      "price": 187,
+      "desc": "招牌烧腊/烤肉高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "红葱酥南日鲜鲍 (只)",
+      "price": 57,
+      "desc": "2只起点",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "芋泥香酥鸭 (例)",
+      "price": 77,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    },
+    {
+      "name": "白切海钓东山大管 (例)",
+      "price": 247,
+      "desc": "🌶️ 辣",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "🌶️ 辣",
+        "当地特色"
+      ]
+    },
+    {
+      "name": "青葱油海蜇花 (例)",
+      "price": 97,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "贵妃蚌土笋冻 (位)",
+      "price": 87,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1位。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "永春醋汁捞螺片 (例)",
+      "price": 157,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "泉州捆蹄拌凉粉 (例)",
+      "price": 97,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "文火陈皮牛展 (例)",
+      "price": 97,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "韭香浸长汀河田鸡 (例)",
+      "price": 127,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "沉缸老酒浸罗氏虾 (例)",
+      "price": 177,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "盐水漳浦填鸭肝 (例)",
+      "price": 177,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "当地特色"
+      ]
+    },
+    {
+      "name": "樱桃萝卜一夜渍 (例)",
+      "price": 77,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "松露脆香素鹅 (例)",
+      "price": 87,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "橄榄菜焗扁豆 (例)",
+      "price": 57,
+      "desc": "精致冷盘高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "脆椒清流腐竹 (例)",
+      "price": 77,
+      "desc": "🌶️ 辣",
+      "checked": false,
+      "rec": false,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "自制腊肉蒸建瓯冬笋 (例)",
+      "price": 127,
+      "desc": "主食/汤品/甜点高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "沙虫双脆鳕鱼盏 (例)",
+      "price": 87,
+      "desc": "🌶️ 辣",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "🌶️ 辣"
+      ]
+    },
+    {
+      "name": "梅干菜猪油粕捞饭 (例)",
+      "price": 197,
+      "desc": "主食/汤品/甜点高端定制海湾晚宴，分量：1例。",
+      "checked": true,
+      "rec": true,
+      "tags": []
+    },
+    {
+      "name": "头水紫菜煲沙地萝卜 (例)",
+      "price": 117,
+      "desc": "主食/汤品/甜点高端定制海湾晚宴，分量：1例。",
+      "checked": false,
+      "rec": false,
+      "tags": []
+    },
+    {
+      "name": "陈皮莲子红豆沙 (位)",
+      "price": 47,
+      "desc": "主食/汤品/甜点高端定制海湾晚宴，分量：1位。",
+      "checked": true,
+      "rec": true,
+      "tags": [
+        "孩子友好",
+        "老人友好"
+      ]
+    }
   ]
 };
 
