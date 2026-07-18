@@ -87,67 +87,6 @@
       </div>
     </div>
 
-    <!-- 1. 行程版本切换器 (Version Switcher) -->
-    <section class="version-selector-card">
-      <div class="card-title-container">
-        <h3>📋 行程方案选择</h3>
-        <span class="badge">可随时切换</span>
-      </div>
-      <p class="card-desc">针对家庭需求，规划了“5天4晚经典版”与“6天5晚深度度假版”，点击下方进行切换：</p>
-      <div class="switcher-group">
-        <button id="btn-5days" class="switch-btn" onclick="switchVersion(5)">
-          <strong>5天4晚 经典版</strong>
-          <span>7月29日 - 8月2日</span>
-        </button>
-        <button id="btn-6days" class="switch-btn active" onclick="switchVersion(6)">
-          <strong>6天5晚 深度版</strong>
-          <span>7月29日 - 8月3日</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- 2. 住宿决策卡片 (Last Night Decision - Soft Tone) -->
-    <section class="decision-card-section" id="section-decision">
-      <div class="decision-header">
-        <div>
-          <p class="kicker">最后一晚住宿决策 (8月2日)</p>
-          <h2>旅途最后一晚，如何安顿？</h2>
-        </div>
-        <span class="decision-status pending">⏰ 状态：待确认</span>
-      </div>
-      <p class="decision-desc">
-        为了让老人和孩子在行程尾声获得最舒适的体验，目前有以下两个方案待全家最终商议决定：
-      </p>
-      <div class="decision-grid">
-        <div class="decision-item reference">
-          <span class="choice-tag tag-a">参考方案 A (推荐)</span>
-          <h4>续住厦门七尚酒店 (Lohkah)</h4>
-          <p class="price-info">使用 9 月到期的 Chase $500 酒店券，双房自付净额极低。</p>
-          <p class="desc"><strong>优势：</strong>全家不搬家行李，在五缘湾彻底慢下来，免去最后一天收拾换房的疲惫，度假松弛度最高。</p>
-        </div>
-        <div class="decision-item candidate">
-          <span class="choice-tag tag-b">候选方案 B (已比较后未采用)</span>
-          <h4>更换其他集团积分房 (Marriott/Hyatt)</h4>
-          <p class="price-info">使用万豪/凯悦积分或免费房券入住市区其他品牌酒店。</p>
-          <p class="desc"><strong>优势：</strong>能保留珍贵的 Chase 酒店券供日后周末游。但需要在8月2日折腾退房、打包全家大件行李搬家。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. 每日行程快捷导航 (Sticky / Jump Navigation) -->
-    <nav class="day-nav-wrapper" id="itinerary-anchor">
-      <div class="day-nav" id="day-nav-list">
-        <!-- 由 JS 动态渲染 D1-D6 按钮 -->
-      </div>
-    </nav>
-
-    <!-- 4. 详细日程表 (Itinerary Details) -->
-    <section class="itinerary-section">
-      <div id="itinerary-list" class="itinerary-list">
-        <!-- 由 JS 动态渲染每日日程卡片 -->
-      </div>
-    </section>
-
     <!-- 4.5. 全程节奏 (Travel Principles Section) -->
     <section class="principles-section">
       <div class="section-header dark">
@@ -178,6 +117,65 @@
         </article>
       </div>
     </section>
+
+    <!-- 1. 行程版本切换器 (Version Switcher) -->
+    <section class="version-selector-card">
+      <div class="card-title-container">
+        <h3>📋 行程方案选择</h3>
+        <span class="badge">可随时切换</span>
+      </div>
+      <p class="card-desc">针对家庭需求，规划了“5天4晚经典版”与“6天5晚深度度假版”，点击下方进行切换：</p>
+      <div class="switcher-group">
+        <button id="btn-5days" class="switch-btn" onclick="switchVersion(5)">
+          <strong>5天4晚 经典版</strong>
+          <span>7月29日 - 8月2日</span>
+        </button>
+        <button id="btn-6days" class="switch-btn active" onclick="switchVersion(6)">
+          <strong>6天5晚 深度版</strong>
+          <span>7月29日 - 8月3日</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. 住宿决策卡片 (Last Night Decision - Soft Tone) -->
+    <section class="decision-card-section" id="section-decision">
+      <div class="decision-header">
+        <div>
+          <p class="kicker">最后一晚住宿 (8月2日)</p>
+          <h2>倾向续住七尚，最终以到店房态/价差确认为准</h2>
+        </div>
+        <span class="decision-status reference">👍 意向：已倾向续住</span>
+      </div>
+      <p class="decision-desc">
+        经过全家讨论，我们已倾向选择更省心舒适的续住方案，具体细则对比如下：
+      </p>
+      <div class="decision-grid">
+        <div class="decision-item reference">
+          <span class="choice-tag tag-a">推荐方案</span>
+          <h4>续住厦门七尚酒店 (Lohkah)</h4>
+          <p class="price-info">使用已有酒店现金券，双房自付净额较低。</p>
+          <p class="desc"><strong>优势：</strong>全家不搬家行李，在五缘湾彻底慢下来，免去最后一天收拾换房的疲惫，度假松弛度最高。</p>
+        </div>
+      </div>
+      <div class="decision-footnote">
+        <span>💡 已比较后未采用：</span>更换其他集团积分房 (Marriott/Hyatt) —— 虽然能保留酒店现金券，但需要在8月2日折腾退房、转场搬运大件行李，对老人孩子较累。
+      </div>
+    </section>
+
+    <!-- 3. 每日行程快捷导航 (Sticky / Jump Navigation) -->
+    <nav class="day-nav-wrapper" id="itinerary-anchor">
+      <div class="day-nav" id="day-nav-list">
+        <!-- 由 JS 动态渲染 D1-D6 按钮 -->
+      </div>
+    </nav>
+
+    <!-- 4. 详细日程表 (Itinerary Details) -->
+    <section class="itinerary-section">
+      <div id="itinerary-list" class="itinerary-list">
+        <!-- 由 JS 动态渲染每日日程卡片 -->
+      </div>
+    </section>
+
 
     <!-- 5. 旅途画卷照片墙 (Staggered Photo Mosaic Gallery) -->
     <section class="pictures-gallery-section" id="section-pictures">

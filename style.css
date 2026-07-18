@@ -494,6 +494,10 @@ h2 {
   gap: 12px;
 }
 
+.decision-grid > .decision-item:only-child {
+  grid-column: span 2;
+}
+
 .decision-item {
   border: 1px dashed var(--border-color);
   border-radius: var(--border-radius);
@@ -523,6 +527,22 @@ h2 {
 .choice-tag.tag-b {
   background-color: var(--border-color);
   color: var(--muted-color);
+}
+
+.decision-footnote {
+  background-color: #f7f9fa;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  font-size: 11px;
+  color: var(--muted-color);
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+.decision-footnote span {
+  font-weight: 700;
+  color: #7f8c8d;
 }
 
 .decision-item h4 {

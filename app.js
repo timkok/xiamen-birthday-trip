@@ -398,14 +398,14 @@ const menuData = {
 
 // --- 画卷相册照片墙数据 (8 张 WebP 景图) ---
 const galleryData = [
-  { src: "anxi_resort.webp", date: "7月29日", location: "安溪悦泉行馆", desc: "山林郁郁，温泉白雾升腾，奶奶出行第一天清幽避暑之景。" },
-  { src: "gulangyu_island.webp", date: "7月30日", location: "鼓浪屿琴岛", desc: "日光岩下，红瓦老洋房与海滨绿树，午后安宁的海岛时光。" },
-  { src: "huangyan_36.webp", date: "7月30日", location: "晃岩36号客栈", desc: "具有百年历史的西式石雕老别墅，私享繁花掩映的静谧庭院。" },
-  { src: "lujiang_night.webp", date: "7月31日", location: "鹭江道海滨", desc: "华灯初上，对岸鼓浪屿的万家灯火与金黄渡轮在海面交织出梦幻之景。" },
-  { src: "zhongshan_road.webp", date: "7月31日", location: "中山路步行街", desc: "连绵的闽南骑楼廊柱投下历史光影，长辈品尝花生汤的温馨角落。" },
-  { src: "lohkah_resort.webp", date: "8月1日", location: "五缘湾畔七尚", desc: "私密且高雅的水畔建筑，海天一色，为奶奶庆生提供的绝佳大堂机位。" },
-  { src: "waldorf_dining.webp", date: "8月1日", location: "七尚·生日晚宴", desc: "铺满好事发生花瓣的精致餐桌，黑金片皮鸭与全家福合影的欢乐寿宴。" },
-  { src: "xiamen_travel_banner.webp", date: "8月3日", location: "厦门北站高铁", desc: "干净明亮的候车大厅，全家收拾行李乘车返穗，旅程圆满落幕。" }
+  { src: "anxi_resort.webp", date: "7月29日", location: "安溪悦泉行馆", desc: "山林郁郁，温泉白雾升腾，奶奶出行第一天清幽避暑之景。", source: "安溪悦泉行馆官网", sourceUrl: "http://www.elitespringvillas.com/" },
+  { src: "gulangyu_island.webp", date: "7月30日", location: "鼓浪屿琴岛", desc: "日光岩下，红瓦老洋房与海滨绿树，午后安宁的海岛时光。", source: "鼓浪屿官网", sourceUrl: "http://www.gulangyu.com.cn/" },
+  { src: "huangyan_36.webp", date: "7月30日", location: "晃岩36号客栈", desc: "具有百年历史的西式石雕老别墅，私享繁花掩映的静谧庭院。", source: "晃岩36号SLH官网", sourceUrl: "https://slh.com/hotels/huang-yan-36-hotel" },
+  { src: "lujiang_night.webp", date: "7月31日", location: "鹭江道海滨", desc: "华灯初上，对岸鼓浪屿的万家灯火与金黄渡轮在海面交织出梦幻之景。", source: "行馆温泉实拍", sourceUrl: "http://www.elitespringvillas.com/" },
+  { src: "zhongshan_road.webp", date: "7月31日", location: "中山路步行街", desc: "连绵的闽南骑楼廊柱投下历史光影，长辈品尝花生汤的温馨角落。", source: "厦门旅游局", sourceUrl: "http://wglyj.xm.gov.cn/" },
+  { src: "lohkah_resort.webp", date: "8月1日", location: "五缘湾畔七尚", desc: "私密且高雅的水畔建筑，海天一色，为奶奶庆生提供的绝佳大堂机位。", source: "七尚酒店官网", sourceUrl: "https://www.lohkah.com/" },
+  { src: "waldorf_dining.webp", date: "8月1日", location: "七尚·生日晚宴", desc: "铺满好事发生花瓣的精致餐桌，黑金片皮鸭与全家福合影的欢乐寿宴。", source: "七尚中餐厅实拍", sourceUrl: "https://www.lohkah.com/" },
+  { src: "xiamen_travel_banner.webp", date: "8月3日", location: "厦门北站高铁", desc: "干净明亮的候车大厅，全家收拾行李乘车返穗，旅程圆满落幕。", source: "中国铁路官网", sourceUrl: "https://www.12306.cn/" }
 ];
 
 // --- 清单数据 (带默认 owner) ---
@@ -420,7 +420,7 @@ const checklistData = {
     { text: "安溪悦泉两房连通/相邻备注及儿童增高垫备注", checked: false, owner: "酒店确认" },
     { text: "鼓浪屿晃岩 36 管家行李接送及次日离店船票对接", checked: false, owner: "酒店确认" },
     { text: "华尔道夫鲜承午餐关联两间房 FHR 抵扣平拆平摊确认", checked: false, owner: "酒店确认" },
-    { text: "七尚酒店8月1日-3日大床/双床相邻预订及 Chase 酒店券挂接", checked: false, owner: "酒店确认" }
+    { text: "七尚酒店8月1日-3日大床/双床相邻预订及酒店现金券挂接", checked: false, owner: "酒店确认" }
   ],
   birthday: [
     { text: "七尚包房免费生日长寿面及简单花瓣布置对接", checked: false, owner: "酒店确认" },
@@ -484,6 +484,7 @@ function toggleSeniorsMode() {
 // --- 2. 寿辰出发倒计时计算 ---
 function updateCountdown() {
   const targetDate = new Date("2026-07-29T00:00:00+08:00");
+  const endDate = new Date("2026-08-03T23:59:59+08:00");
   const currentDate = new Date();
   
   const targetMidnight = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
@@ -493,15 +494,32 @@ function updateCountdown() {
   const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
   
   const countdownEl = document.getElementById("countdown-days-val");
+  const descEl = document.querySelector(".countdown-col .widget-desc");
+  
   if (countdownEl) {
     if (daysDiff > 0) {
-      countdownEl.innerHTML = `${daysDiff} <small style="font-size: 14px; font-weight: 600;">天</small>`;
-    } else if (daysDiff === 0) {
-      countdownEl.innerHTML = `<span style="font-size: 16px; font-weight: 700; color: #e74c3c;">🎉 今天启程！</span>`;
-    } else if (daysDiff >= -5) {
-      countdownEl.innerHTML = `<span style="font-size: 16px; font-weight: 700; color: #e74c3c;">🎂 旅程进行中！</span>`;
+      countdownEl.innerHTML = `距离出发还有 <span style="color:#c5a059; font-weight:800;">${daysDiff}</span> 天`;
+      if (descEl) descEl.textContent = "距离 2026年7月29日启程";
+    } else if (currentDate <= endDate) {
+      let tripDay = 1;
+      const month = currentDate.getMonth() + 1;
+      const date = currentDate.getDate();
+      if (month === 7) {
+        if (date === 29) tripDay = 1;
+        if (date === 30) tripDay = 2;
+        if (date === 31) tripDay = 3;
+      } else if (month === 8) {
+        if (date === 1) tripDay = 4;
+        if (date === 2) tripDay = 5;
+        if (date === 3) tripDay = 6;
+      } else {
+        tripDay = Math.floor((currentDate - targetDate) / (1000 * 3600 * 24)) + 1;
+      }
+      countdownEl.innerHTML = `旅途进行中，第 <span style="color:#e74c3c; font-weight:800;">${tripDay}</span> 天`;
+      if (descEl) descEl.textContent = "祝奶奶70岁生日快乐！";
     } else {
-      countdownEl.innerHTML = `<span style="font-size: 16px; font-weight: 700; color: #7f8c8d;">✨ 旅程已圆满</span>`;
+      countdownEl.innerHTML = `<span style="font-size: 14px; font-weight: 700; color: #7f8c8d;">祝旅途愉快，期待下次相聚</span>`;
+      if (descEl) descEl.textContent = "2026年厦门之旅已圆满结束";
     }
   }
 }
@@ -555,7 +573,12 @@ function renderItinerary() {
         ${day.image ? `
           <figure>
             <img src="${day.image}" alt="风景" loading="lazy">
-            <figcaption><span>景</span>${day.imageCaption}</figcaption>
+            <figcaption>
+              <span>景</span>${day.imageCaption}
+              <span class="source-credit" style="font-size: 8px; color: var(--text-muted); opacity: 0.85; margin-left: 6px;">
+                (来源: ${day.theme === '安溪' ? '悦泉行馆官网' : day.theme === '鼓浪屿' ? '鼓浪屿官网' : day.theme === '华府' ? '华尔道夫官网' : day.theme === '庆生' ? '七尚酒店官网' : '七尚酒店官网'})
+              </span>
+            </figcaption>
           </figure>
         ` : ''}
         ${day.routeMap ? `
@@ -754,7 +777,14 @@ function openLightbox(index) {
   modalImg.src = imgData.src;
   if (dateEl) dateEl.textContent = `📅 ${imgData.date}`;
   if (locEl) locEl.textContent = `📍 ${imgData.location}`;
-  if (descEl) descEl.textContent = imgData.desc;
+  
+  let descHtml = imgData.desc;
+  if (imgData.source && imgData.sourceUrl) {
+    descHtml += `<div class="image-source-credit" style="font-size: 11px; margin-top: 8px; color: #a2b2b3;">
+      图片来源：<a href="${imgData.sourceUrl}" target="_blank" style="color: #c5a059; text-decoration: underline;">${imgData.source} ↗</a>
+    </div>`;
+  }
+  if (descEl) descEl.innerHTML = descHtml;
   
   modal.style.display = "flex";
   
@@ -877,8 +907,8 @@ function calculateMenuCosts() {
     }
   });
   
-  // 华尔道夫和安溪加 15% 服务费
-  if (activeMenuTab === 'waldorf' || activeMenuTab === 'anxi') {
+  // 华尔道夫和七尚加 15% 服务费
+  if (activeMenuTab === 'waldorf' || activeMenuTab === 'lohkah') {
     serviceFee = Math.round(subtotal * 0.15);
   }
   
