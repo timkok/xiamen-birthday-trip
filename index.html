@@ -2,53 +2,443 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="2;url=https://liao-xiamen-birthday-trip.pages.dev/">
-  <title>正在跳转到正式版行程单...</title>
-  <style>
-    body {
-      font-family: -apple-system, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f7f9fa;
-      color: #333;
-      text-align: center;
-    }
-    .container {
-      padding: 30px;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      max-width: 400px;
-    }
-    h2 { color: #a67c4a; margin-top: 0; }
-    p { color: #666; font-size: 14px; line-height: 1.5; }
-    a { color: #2e86ab; text-decoration: none; font-weight: bold; }
-    .loader {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #a67c4a;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>奶奶70岁厦门生日之旅｜6人家庭行程助手</title>
+  <meta name="description" content="专为长辈与家庭设计的厦门生日自驾慢旅行程助手，集成今日看板、大字老人模式、预约清单、防暑备用方案。">
+  
+  <!-- 微信内置防缓存 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h2>🌊 厦门之旅行程单</h2>
-    <div class="loader"></div>
-    <p>正在自动跳转到最新正式版网页...</p>
-    <p>如果未自动跳转，请<a href="https://liao-xiamen-birthday-trip.pages.dev/">点击此处跳转</a></p>
+
+  <!-- 1. 紧凑型顶部栏 (Compact Trip Header) -->
+  <header class="trip-header">
+    <div class="header-top">
+      <div class="birthday-badge">🎂 庆祝奶奶 70 岁寿辰</div>
+      <div class="utility-buttons">
+        <button id="btn-today-mode" class="utility-btn" onclick="toggleTodayMode()">只看今天</button>
+        <button id="btn-seniors-mode" class="utility-btn" onclick="toggleSeniorsMode()">👵 老人大字</button>
+      </div>
+    </div>
+    
+    <div class="header-title-section">
+      <h1>厦门生日家庭行程</h1>
+      <p class="header-subtitle">茶山温泉 · 琴岛老洋房 · 海湾家宴</p>
+    </div>
+    
+    <div class="trip-meta-info">
+      <span class="meta-pill">📅 <span id="header-dates-label">7月29日 - 8月3日</span></span>
+      <span class="meta-pill">👨‍👩‍👧‍👦 6人同行 (两老两中两小)</span>
+      <span class="meta-pill">🚄 广州东 ⇔ 厦门北 往返高铁</span>
+    </div>
+    
+    <!-- 行程总进度 -->
+    <div class="progress-strip">
+      <div class="progress-strip-fill" id="progress-fill"></div>
+    </div>
+  </header>
+
+  <!-- 主体部分 -->
+  <main class="app-container">
+    
+    <!-- 2. 今日看板 / 关键事件 (Today Mode Widget) -->
+    <section id="today-widget" class="section-card today-widget" aria-labelledby="today-title">
+      <div class="today-header">
+        <h2 id="today-title" class="today-badge-text">D1 · 安溪山林</h2>
+        <span class="today-date-text" id="today-date-val">7月29日 周三</span>
+      </div>
+      
+      <!-- 预览警告提示，非行程日期时显示 -->
+      <div id="today-preview-alert" class="preview-alert" style="display: none;">
+        💡 当前不在行程期间，展示第 1 天预览状态
+      </div>
+
+      <div class="today-hotel-banner">
+        <span>🏨 今晚入住:</span>
+        <strong id="today-hotel-val">安溪悦泉行馆</strong>
+      </div>
+
+      <div class="today-grid">
+        <div class="today-grid-item">
+          <small>🕒 下个固定预订</small>
+          <span id="today-next-event-val">12:00 厦门北站取车</span>
+        </div>
+        <div class="today-grid-item">
+          <small>⏰ 最迟出发时间</small>
+          <span id="today-departure-val">08:00 广州东站出发</span>
+        </div>
+        <div class="today-grid-item">
+          <small>🚙 交通工具</small>
+          <span id="today-transit-val">高铁与租车MPV</span>
+        </div>
+        <div class="today-grid-item">
+          <small>📍 目的地导航</small>
+          <span id="today-nav-link-box">
+            <!-- JS 动态填入 -->
+          </span>
+        </div>
+      </div>
+
+      <div class="today-pack-box">
+        <div class="today-pack-title">🎒 随身必备物</div>
+        <ul class="today-pack-list" id="today-pack-val">
+          <li>身份证件</li>
+          <li>长辈常用药</li>
+          <li>物理防晒帽</li>
+        </ul>
+      </div>
+
+      <div class="today-fallback-box" id="today-fallback-val">
+        ⛈️【防雨防误预案】若高铁延误，取消下午茶山漫步，入店先晚餐再泡汤，避免空腹泡温泉。
+      </div>
+      
+      <button class="utility-btn" style="margin-top: 6px; display: none;" id="btn-back-full" onclick="toggleTodayMode(false)">返回完整行程</button>
+    </section>
+
+    <!-- 3. 不可错过 (Reservation Dashboard) -->
+    <section class="section-card" aria-labelledby="res-title">
+      <div class="section-title">
+        <h2 id="res-title">⏰ 不可错过 · 固定预订</h2>
+        <span class="status-badge status-confirmed">已全部确认</span>
+      </div>
+      <p class="section-desc">全行程中涉及车票、船票、限时午宴与生日家宴的固定时间节点：</p>
+      
+      <div class="reservation-list" id="reservation-list-box">
+        <!-- JS 动态渲染不可错过卡片 -->
+      </div>
+    </section>
+
+    <!-- 4. 每日行程 (Daily Itinerary) -->
+    <section class="section-card" aria-labelledby="itinerary-title">
+      <div class="section-title">
+        <h2 id="itinerary-title">🗓️ 每日详细日程</h2>
+      </div>
+      <p class="section-desc">点击日期切换查看每日安排、体力要求与天气备选方案：</p>
+      
+      <!-- Tab 快捷导航 -->
+      <nav class="day-nav" id="day-nav-box" aria-label="行程天数切换">
+        <!-- JS 动态渲染 D1 - D6 Tab -->
+      </nav>
+
+      <!-- 每日日程详情 -->
+      <div class="day-card-container" id="day-card-container-box">
+        <!-- JS 动态渲染每日行程内容 -->
+      </div>
+    </section>
+
+    <!-- 5. 酒店与转场经验 (Hotels & Transfers) -->
+    <section class="section-card" aria-labelledby="hotels-title">
+      <div class="section-title">
+        <h2 id="hotels-title">🏨 酒店入住与行李转场</h2>
+      </div>
+      <p class="section-desc">明确四个酒店的入住细则与长辈无忧过夜包搬运方案：</p>
+      
+      <div class="hotel-grid">
+        <!-- 悦泉 -->
+        <div class="hotel-card">
+          <div class="hotel-card-header">
+            <h3>D1 - D2 安溪悦泉行馆</h3>
+            <span class="status-badge status-confirmed">住 1 晚</span>
+          </div>
+          <div class="hotel-card-body">
+            <p><strong>入住安排:</strong> 两间别墅（含早，私享温泉）。</p>
+            <p><strong>转场计划:</strong> 北站取车后直达，行程1.5小时。建议前台关联两单并确认提供儿童座椅。</p>
+          </div>
+        </div>
+        
+        <!-- 晃岩 -->
+        <div class="hotel-card">
+          <div class="hotel-card-header" style="background:#5e483b;">
+            <h3>D2 - D3 鼓浪屿晃岩36号</h3>
+            <span class="status-badge status-confirmed">住 1 晚</span>
+          </div>
+          <div class="hotel-card-body">
+            <p><strong>入住安排:</strong> 鼓浪屿老别墅（含早，近日光岩平路）。</p>
+            <p><strong>转场计划:</strong> D2自驾回市区后，行李直接寄存华尔道夫；上岛仅提过夜双肩包。14:30轮渡，已关联管家接行李。</p>
+            <div class="luggage-warning-box">
+              ⚠️ 鼓浪屿行李策略：大行李箱严禁上岛，寄存华尔道夫，只带过夜包上岛！
+            </div>
+          </div>
+        </div>
+
+        <!-- 华府 -->
+        <div class="hotel-card">
+          <div class="hotel-card-header" style="background:#998054;">
+            <h3>D3 - D4 厦门华尔道夫</h3>
+            <span class="status-badge status-confirmed">住 1 晚</span>
+          </div>
+          <div class="hotel-card-body">
+            <p><strong>入住安排:</strong> 奢华客房2间（FHR预订，含双早+$100额度）。</p>
+            <p><strong>转场计划:</strong> D3离岛后打车到店入住。中午13:30鲜承中餐厅午宴，可分拆挂账。</p>
+          </div>
+        </div>
+
+        <!-- 七尚 -->
+        <div class="hotel-card">
+          <div class="hotel-card-header" style="background:#1d4c5c;">
+            <h3>D4 - D6 厦门七尚酒店</h3>
+            <span class="status-badge status-confirmed">住 2 晚</span>
+          </div>
+          <div class="hotel-card-body">
+            <p><strong>入住安排:</strong> 海湾套房/客房2间（FHR预订，含双早+$100额度）。</p>
+            <p><strong>转场计划:</strong> D4中午打车到店，安排连通或相邻房。8/1晚宴在厦餐厅举办。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 美食与预算规划 (Dining & Budget) -->
+    <section class="section-card" id="section-dining" aria-labelledby="dining-title">
+      <div class="section-title">
+        <h2 id="dining-title">🍽️ 三餐勾选与人均预算</h2>
+      </div>
+      <p class="section-desc">已精选出适合六人（老少皆宜）的推荐菜单。可勾选/去勾选来动态核算账单：</p>
+      
+      <nav class="menu-tab-row" aria-label="餐馆菜单切换">
+        <button id="menu-btn-anxi" class="menu-tab-btn active" onclick="switchMenuTab('anxi')">安溪晚餐</button>
+        <button id="menu-btn-waldorf" class="menu-tab-btn" onclick="switchMenuTab('waldorf')">华府午宴</button>
+        <button id="menu-btn-lohkah" class="menu-tab-btn" onclick="switchMenuTab('lohkah')">七尚庆生</button>
+      </nav>
+
+      <div class="menu-container">
+        <!-- 批量选择与恢复推荐 -->
+        <div class="menu-control-row">
+          <button class="menu-ctrl-btn" onclick="batchSelectMenu(true)">全部勾选</button>
+          <button class="menu-ctrl-btn" onclick="batchSelectMenu(false)">全部清空</button>
+          <button class="menu-ctrl-btn" onclick="restoreMenuRecommend()">恢复推荐</button>
+        </div>
+
+        <!-- 菜单列表容器 (JS渲染) -->
+        <div id="menu-items-box"></div>
+        
+        <!-- 费用统计看板 -->
+        <div class="menu-summary-bar">
+          <div class="summary-row">
+            <span>已选菜品数量:</span>
+            <strong id="menu-dish-count">0 项</strong>
+          </div>
+          <div class="summary-row">
+            <span>菜品小计:</span>
+            <strong id="menu-subtotal">¥0</strong>
+          </div>
+          <div class="summary-row">
+            <span>服务费 (华府/七尚 15%):</span>
+            <strong id="menu-service-fee">¥0</strong>
+          </div>
+          <div class="summary-row grand-total">
+            <span>预计总费用 (含税费):</span>
+            <strong id="menu-grand-total">¥0</strong>
+          </div>
+          <div class="summary-row" style="font-weight: bold; color: var(--sea-dark);">
+            <span>6人平摊人均:</span>
+            <strong id="menu-per-person">¥0 / 人</strong>
+          </div>
+          
+          <!-- FHR额度使用提醒 -->
+          <div id="menu-fhr-alert" class="fhr-alert"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 行前准备清单 (Packing Checklist) -->
+    <section class="section-card" id="section-checklist" aria-labelledby="checklist-title">
+      <div class="section-title">
+        <h2 id="checklist-title">✅ 行前打卡清单</h2>
+        <button class="reset-list-btn" onclick="showConfirmReset()">⚠️ 重置清单</button>
+      </div>
+      
+      <!-- 进度条 -->
+      <div class="checklist-progress-box">
+        <div class="checklist-header-row">
+          <span style="font-size:12px; font-weight:bold; color:var(--success-color);" id="checklist-progress-text">已完成 0%</span>
+        </div>
+        <div class="checklist-progress-outer">
+          <div class="checklist-progress-inner" id="checklist-progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- 过滤控制 -->
+      <div class="checklist-filters">
+        <label class="unfinished-filter-label">
+          <input type="checkbox" id="chk-unfinished-only" onchange="toggleUnfinishedOnly(this.checked)">
+          <span>只看未完成项目</span>
+        </label>
+        <span class="status-badge status-suggested" id="checklist-total-badge">已完成 0 / 17</span>
+      </div>
+
+      <!-- 清单内容 (JS渲染) -->
+      <div class="checklist-group" id="checklist-group-box"></div>
+    </section>
+
+    <!-- 8. 出行小贴士 (Tips & Emergency) -->
+    <section class="section-card" aria-labelledby="tips-title">
+      <div class="section-title">
+        <h2 id="tips-title">💡 暑期海岛出行须知</h2>
+      </div>
+      <div class="tips-box">
+        <div class="tip-card">
+          <span class="tip-emoji">🌦️</span>
+          <div class="tip-content">
+            <strong>暴雨雷电与酷暑避暑</strong>
+            <p>7-8 月厦门正值盛夏，常有对流雷阵雨。物理防晒（防晒帽、晴雨伞）必须做足，午后最热时段（13:30 - 16:30）切忌户外暴晒活动。</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">👟</span>
+          <div class="tip-content">
+            <strong>鼓浪屿石子路步行避坑</strong>
+            <p>岛上完全没有机动车，石子路起伏。长辈必须穿防滑健步鞋，切勿强行攀登日光岩天梯，累了立即就地在咖啡馆/树荫下喝水休息。</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">💊</span>
+          <div class="tip-content">
+            <strong>常用急救药品随身带</strong>
+            <p>长辈高血压、糖尿病等日常药物及解暑药（藿香正气水等）必须放入两大成人的随身腰包中，绝不可以放入寄存的大行李箱。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 辅助工具与版本切换 (Secondary Reference) -->
+    <section class="section-card" aria-labelledby="reference-title">
+      <div class="section-title">
+        <h2 id="reference-title">📱 微信一键联络模板</h2>
+      </div>
+      <p class="section-desc">点击右侧按钮复制文案后，可直接粘贴发给酒店管家或客服微信号：</p>
+      
+      <div class="temp-card">
+        <div class="temp-card-head">
+          <strong>🏡 鼓浪屿晃岩 36 号行李/导览对接</strong>
+          <button class="copy-btn" onclick="copyTemplateText('temp-txt-huangyan', this)">复制文案</button>
+        </div>
+        <p class="temp-body-text" id="temp-txt-huangyan">您好，我们预订了7月30日入住。共6人（含两位70岁老人和两名儿童）。请问：1. 能否协助预约安排14:30三丘田码头上岛船票？2. 从码头到酒店的行李协助如何收费？3. 下午17:00能否帮忙引荐一位当地持证导游，带我们在别墅外围平路进行2小时的避暑人文讲解？谢谢！</p>
+      </div>
+
+      <div class="temp-card">
+        <div class="temp-card-head">
+          <strong>🏨 华尔道夫相邻房与分单备注</strong>
+          <button class="copy-btn" onclick="copyTemplateText('temp-txt-waldorf', this)">复制文案</button>
+        </div>
+        <p class="temp-body-text" id="temp-txt-waldorf">您好，我们通过FHR预订了7/31两间客房，此行是为了帮长辈庆祝70岁大寿。想请问能否协助：1. 关联两间房订单，并尽量安排连通房或相邻房；2. 帮长辈稍微布置一下客房并安排简单的生日祝贺；3. 我们预约了7/31 13:30鲜承午餐，届时请协助将结账单分拆挂账到两间客房内以便使用FHR额度。谢谢！</p>
+      </div>
+
+      <div class="temp-card">
+        <div class="temp-card-head">
+          <strong>🎂 七尚中餐厅（厦餐厅）生日晚宴安排</strong>
+          <button class="copy-btn" onclick="copyTemplateText('temp-txt-lohkah', this)">复制文案</button>
+        </div>
+        <p class="temp-body-text" id="temp-txt-lohkah">您好，我们预约了8/1 19:00的庆生晚宴，共6位（含两位老人两名儿童），是长辈的七十寿辰家宴。请协助做好以下备注：1. 菜品需要极其清淡，少油、少盐、少辣，鱼刺请后厨特别处理干净；2. 协助提供长寿面、包房简单生日花瓣布置和“好事发生”桌面立牌；3. 结账时请将合规消费拆分挂账到我们开立的两间FHR客房中。谢谢！</p>
+      </div>
+
+      <!-- 版本切换器 -->
+      <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 14px;">
+        <h4 style="font-size: 13px; color: var(--sea-dark); margin-bottom: 6px;">📋 自由切换行程天数版本</h4>
+        <div class="ver-picker">
+          <button id="ver-btn-5" class="ver-btn" onclick="switchTripVersion(5)">
+            <strong>5天4晚 经典版</strong>
+            <span>7/29 - 8/2 返程</span>
+          </button>
+          <button id="ver-btn-6" class="ver-btn active" onclick="switchTripVersion(6)">
+            <strong>6天5晚 深度版</strong>
+            <span>7/29 - 8/3 返程</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 高德地图快捷导航 -->
+    <section class="section-card" id="section-navigation" aria-labelledby="nav-title">
+      <div class="section-title">
+        <h2 id="nav-title">📍 高德一键导航入口</h2>
+      </div>
+      <p class="section-desc">网页版直接定位，户外一键步行/驾车规划：</p>
+      <div class="nav-shortcut-grid" id="nav-shortcut-grid-box">
+        <!-- JS 动态渲染地图导航按钮 -->
+      </div>
+    </section>
+
+    <!-- 11. 旅途画卷 (Visual Gallery) -->
+    <section class="section-card" id="section-pictures" aria-labelledby="gallery-title">
+      <div class="section-title">
+        <h2 id="gallery-title">🎨 旅途景图画卷</h2>
+      </div>
+      <p class="section-desc">点击缩略图可以全屏放大，滑动查看风景路线实景：</p>
+      <div class="mosaic-gallery" id="gallery-mosaic-box">
+        <!-- JS 动态渲染照片墙 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚版权 -->
+  <footer style="text-align: center; font-size: 11px; color: var(--text-muted); padding: 10px 0 100px;">
+    <span>厦门 70 岁生日家庭行程助手 © 2026</span>
+  </footer>
+
+  <!-- 12. 手机吸底快速导航栏 (WeChat Style Sticky Nav) -->
+  <nav class="mobile-nav" id="sticky-bottom-nav">
+    <a class="nav-item" onclick="scrollToElement('today-widget')">
+      <span class="nav-icon">⭐</span>
+      <span class="nav-text">今日</span>
+    </a>
+    <a class="nav-item" onclick="scrollToElement('day-nav-box')">
+      <span class="nav-icon">🗓️</span>
+      <span class="nav-text">日程</span>
+    </a>
+    <a class="nav-item" onclick="scrollToElement('section-dining')">
+      <span class="nav-icon">🍽️</span>
+      <span class="nav-text">三餐</span>
+    </a>
+    <a class="nav-item" onclick="scrollToElement('section-checklist')">
+      <span class="nav-icon">✅</span>
+      <span class="nav-text">打卡</span>
+    </a>
+    <a class="nav-item" onclick="scrollToElement('section-navigation')">
+      <span class="nav-icon">📍</span>
+      <span class="nav-text">地图</span>
+    </a>
+  </nav>
+
+  <!-- 13. 灯箱大图 Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="风景图">
+      <div class="lightbox-caption">
+        <div class="lightbox-title-row">
+          <span id="lightbox-location"></span>
+          <span id="lightbox-date"></span>
+        </div>
+        <p id="lightbox-desc"></p>
+        <p class="lightbox-credit" id="lightbox-credit"></p>
+      </div>
+      <button class="lightbox-nav-btn prev" onclick="prevLightbox(event)">❮</button>
+      <button class="lightbox-nav-btn next" onclick="nextLightbox(event)">❯</button>
+    </div>
   </div>
+
+  <!-- 14. 清单重置 2 步确认 Modal -->
+  <div id="confirm-modal" class="confirm-modal">
+    <div class="confirm-box">
+      <h3>⚠️ 确认重置打卡清单吗？</h3>
+      <p>这将清除您本地保存的所有行李清单打卡进度，责任人将被还原，此操作无法撤销。</p>
+      <div class="confirm-btns">
+        <button class="confirm-btn yes" onclick="confirmResetChecklist()">确定重置</button>
+        <button class="confirm-btn no" onclick="hideConfirmReset()">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. Toast 弹出消息提示 -->
+  <div id="toast" class="toast-popup"></div>
+
+  <!-- JavaScript 脚本 -->
+  <script src="app.js"></script>
 </body>
 </html>
